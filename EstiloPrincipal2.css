@@ -1,0 +1,85 @@
+﻿/*Parte de hoja de estilo para Responsive Web Design*/
+
+
+
+@media (max-width: 600px) {
+ 
+ img{
+height: 20em;
+width: 100%;
+}
+
+nav{
+background: white;
+margin-top: 2em;
+margin-left: 0.5em;
+}
+
+nav ul li a{
+text-decoration: none;
+display: block;
+color: green;
+padding: 7px 10px;
+}
+
+}
+
+
+/*Parte de hoja de estilo para menú desplegable*/
+
+header{
+width: 90%
+max-width: 1000px;
+margin: auto;
+}
+
+nav{
+background: white;
+margin-top: 2em;
+margin-left: 32%;
+position: relative;
+}
+
+nav ul{
+list-style: none;
+padding: 10px;
+margin: 10px;
+overflow: hidden;
+}
+
+nav > ul > li{
+float: left;
+}
+
+nav ul li a{
+text-decoration: none;
+display: block;
+color: green;
+padding: 10px 20px;
+}
+
+nav ul li a:hover{
+background: black;
+}
+
+nav > ul  > li:hover div{
+display: table;
+}
+
+
+nav ul li div{
+width: 100 px;
+position: absolute;
+background:white;
+display: none;
+}
+
+
+
+/*Artefacto de código para lista desplegable horizontal
+nav ul li div ul li{
+display: table-cell;
+border-right: 1px solid rgba(255, 255, 255, 0.5)
+}
+/*
+	

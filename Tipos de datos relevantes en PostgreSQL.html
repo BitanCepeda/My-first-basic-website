@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0100)https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node134.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Tipos de datos relevantes en PostgreSQL</title>
+<meta name="description" content="Tipos de datos relevantes en PostgreSQL">
+<meta name="keywords" content="notas-curso-BD">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="./Tipos de datos relevantes en PostgreSQL_files/notas-curso-BD.css">
+
+<link rel="previous" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node133.html">
+<link rel="up" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node83.html">
+<link rel="next" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node135.html">
+</head>
+
+<body>
+<!--Navigation Panel-->
+<a name="tex2html2563" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node135.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="file://usr/share/latex2html/icons/next.png"></a> 
+<a name="tex2html2557" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node83.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="file://usr/share/latex2html/icons/up.png"></a> 
+<a name="tex2html2553" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node133.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="file://usr/share/latex2html/icons/prev.png"></a> 
+<a name="tex2html2559" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node1.html">
+<img width="65" height="24" align="BOTTOM" border="0" alt="contents" src="file://usr/share/latex2html/icons/contents.png"></a> 
+<a name="tex2html2561" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node218.html">
+<img width="43" height="24" align="BOTTOM" border="0" alt="index" src="file://usr/share/latex2html/icons/index.png"></a> 
+<br>
+<b> Next:</b> <a name="tex2html2564" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node135.html">INSERT</a>
+<b> Up:</b> <a name="tex2html2558" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node83.html">Crear</a>
+<b> Previous:</b> <a name="tex2html2554" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node133.html">VACUUM</a>
+ &nbsp; <b>  <a name="tex2html2560" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node1.html">Índice General</a></b> 
+ &nbsp; <b>  <a name="tex2html2562" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node218.html">Índice de Materias</a></b> 
+<br>
+<br>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION009251000000000000000">
+Tipos de datos relevantes en PostgreSQL</a>
+</h2>
+
+<p>
+Como todos los manejadores de bases de datos, PostgreSQL implementa
+los tipos de datos definidos para el estándar SQL3 y aumenta algunos
+otros. Los definidos por el estándar SQL3 se muestran en la
+tabla&nbsp;<a href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node134.html#tab:est">8.1</a>, mientras que las extensiones se encuentran en la
+tabla&nbsp;<a href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node134.html#tab:ext">8.2</a>.
+
+</p><p>
+<br></p><p></p>
+<div align="CENTER"><a name="841"></a>
+<table>
+<caption><strong>Tabla:</strong>
+Tipos de datos del estándar SQL3 en PostgreSQL</caption>
+<tbody><tr><td>
+<div align="CENTER">
+<table cellpadding="3" border="1" align="CENTER">
+<tbody><tr><td align="CENTER" colspan="3"><b>Tipos de datos del estándar SQL3 en PostgreSQL</b></td>
+</tr>
+<tr><td align="LEFT">Tipo en Postgres</td>
+<td align="LEFT">Correspondiente en SQL3</td>
+<td align="LEFT" valign="TOP" width="192">Descripción</td>
+</tr>
+<tr><td align="LEFT">bool</td>
+<td align="LEFT">boolean</td>
+<td align="LEFT" valign="TOP" width="192">valor lógico o booleano (true/false)</td>
+</tr>
+<tr><td align="LEFT">char(n)</td>
+<td align="LEFT">character(n)</td>
+<td align="LEFT" valign="TOP" width="192">cadena de carácteres de tamaño fijo</td>
+</tr>
+<tr><td align="LEFT">date</td>
+<td align="LEFT">date</td>
+<td align="LEFT" valign="TOP" width="192">fecha (sin hora)</td>
+</tr>
+<tr><td align="LEFT">float4/8</td>
+<td align="LEFT">float(86#86)</td>
+<td align="LEFT" valign="TOP" width="192">número de punto flotante con precisión 86#86</td>
+</tr>
+<tr><td align="LEFT">float8</td>
+<td align="LEFT">real, double precision</td>
+<td align="LEFT" valign="TOP" width="192">número de punto flotante de doble precisión</td>
+</tr>
+<tr><td align="LEFT">int2</td>
+<td align="LEFT">smallint</td>
+<td align="LEFT" valign="TOP" width="192">entero de dos bytes con signo</td>
+</tr>
+<tr><td align="LEFT">int4</td>
+<td align="LEFT">int, integer</td>
+<td align="LEFT" valign="TOP" width="192">entero de cuatro bytes con signo</td>
+</tr>
+<tr><td align="LEFT">int4</td>
+<td align="LEFT">decimal(87#87)</td>
+<td align="LEFT" valign="TOP" width="192">número exacto con 88#88</td>
+</tr>
+<tr><td align="LEFT">int4</td>
+<td align="LEFT">numeric(87#87)</td>
+<td align="LEFT" valign="TOP" width="192">número exacto con 89#89</td>
+</tr>
+<tr><td align="LEFT">money</td>
+<td align="LEFT">decimal(9,2)</td>
+<td align="LEFT" valign="TOP" width="192">cantidad monetaria</td>
+</tr>
+<tr><td align="LEFT">time</td>
+<td align="LEFT">time</td>
+<td align="LEFT" valign="TOP" width="192">hora en horas, minutos, segundos y centésimas</td>
+</tr>
+<tr><td align="LEFT">timespan</td>
+<td align="LEFT">interval</td>
+<td align="LEFT" valign="TOP" width="192">intervalo de tiempo</td>
+</tr>
+<tr><td align="LEFT">timestamp</td>
+<td align="LEFT">timestamp with time zone</td>
+<td align="LEFT" valign="TOP" width="192">fecha y hora con zonificación</td>
+</tr>
+<tr><td align="LEFT">varchar(n)</td>
+<td align="LEFT">character varying(n)</td>
+<td align="LEFT" valign="TOP" width="192">cadena de carácteres de tamaño variable</td>
+</tr>
+</tbody></table>
+
+<a name="tab:est"></a>
+</div></td></tr>
+</tbody></table>
+</div><p></p>
+<br>
+
+<p>
+<br></p><p></p>
+<div align="CENTER"><a name="855"></a>
+<table>
+<caption><strong>Tabla 8.2:</strong>
+Tipos de datos extendidos por PostgreSQL</caption>
+<tbody><tr><td>
+<div align="CENTER">
+<table cellpadding="3" border="1" align="CENTER">
+<tbody><tr><td align="CENTER" colspan="2"><b>Tipos de datos extendidos en PostgreSQL</b></td>
+</tr>
+<tr><td align="LEFT">Tipo</td>
+<td align="LEFT" valign="TOP" width="240">Descripción</td>
+</tr>
+<tr><td align="LEFT">box</td>
+<td align="LEFT" valign="TOP" width="240">caja rectangular en el plano</td>
+</tr>
+<tr><td align="LEFT">cidr</td>
+<td align="LEFT" valign="TOP" width="240">dirección de red o de <em>host</em> en IP versión 4</td>
+</tr>
+<tr><td align="LEFT">circle</td>
+<td align="LEFT" valign="TOP" width="240">círculo en el plano</td>
+</tr>
+<tr><td align="LEFT">inet</td>
+<td align="LEFT" valign="TOP" width="240">dirección de red o de <em>host</em> en IP versión 4</td>
+</tr>
+<tr><td align="LEFT">int8</td>
+<td align="LEFT" valign="TOP" width="240">entero de ocho bytes con signo</td>
+</tr>
+<tr><td align="LEFT">line</td>
+<td align="LEFT" valign="TOP" width="240">línea infinita en el plano</td>
+</tr>
+<tr><td align="LEFT">lseg</td>
+<td align="LEFT" valign="TOP" width="240">segmento de línea en el plano</td>
+</tr>
+<tr><td align="LEFT">path</td>
+<td align="LEFT" valign="TOP" width="240">trayectoria geométrica, abierta o cerrada, en el plano</td>
+</tr>
+<tr><td align="LEFT">point</td>
+<td align="LEFT" valign="TOP" width="240">punto geométrico en el plano</td>
+</tr>
+<tr><td align="LEFT">polygon</td>
+<td align="LEFT" valign="TOP" width="240">trayectoria geométrica cerrada en el plano</td>
+</tr>
+<tr><td align="LEFT">serial</td>
+<td align="LEFT" valign="TOP" width="240">identificador numerico único</td>
+</tr>
+</tbody></table>
+
+<a name="tab:ext"></a>
+</div></td></tr>
+</tbody></table>
+</div><p></p>
+<br>
+
+<p>
+<br></p><p></p>
+<div align="CENTER"><a name="916"></a>
+<table>
+<caption><strong>Tabla 8.3:</strong>
+Tipos de datos de PostgreSQL</caption>
+<tbody><tr><td>
+<div align="CENTER">
+<table cellpadding="3" border="1" align="CENTER">
+<tbody><tr><td align="LEFT"><b>Tipo</b></td>
+<td align="LEFT"><b>Descripción</b></td>
+</tr>
+<tr><td align="LEFT"><tt>SET</tt></td>
+<td align="LEFT">conjunto de tuplas</td>
+</tr>
+<tr><td align="LEFT"><tt>abstime</tt></td>
+<td align="LEFT">fecha y hora absoluta de rango limitado (Unix system time)</td>
+</tr>
+<tr><td align="LEFT"><tt>aclitem</tt></td>
+<td align="LEFT">lista de control de acceso</td>
+</tr>
+<tr><td align="LEFT"><tt>bool</tt></td>
+<td align="LEFT">booleano '<em>true</em>'/'<em>false</em>'</td>
+</tr>
+<tr><td align="LEFT"><tt>box</tt></td>
+<td align="LEFT">rectángulo geométrico '(izquierda abajo, derecha arriba)'</td>
+</tr>
+<tr><td align="LEFT"><tt>bpchar</tt></td>
+<td align="LEFT">carácteres rellenos con espacios, longitud especificada al momento de creación</td>
+</tr>
+<tr><td align="LEFT"><tt>bytea</tt></td>
+<td align="LEFT">arreglo de bytes de longitud variable</td>
+</tr>
+<tr><td align="LEFT"><tt>char</tt></td>
+<td align="LEFT">un sólo carácter</td>
+</tr>
+<tr><td align="LEFT"><tt>cid</tt></td>
+<td align="LEFT"><em>command identifier type</em>, identificador de secuencia en transacciones</td>
+</tr>
+<tr><td align="LEFT"><tt>cidr</tt></td>
+<td align="LEFT">dirección de red</td>
+</tr>
+<tr><td align="LEFT"><tt>circle</tt></td>
+<td align="LEFT">círculo geométrico '(centro, radio)'</td>
+</tr>
+<tr><td align="LEFT"><tt>date</tt></td>
+<td align="LEFT">fecha ANSI SQL 'aaaa-mm-dd'</td>
+</tr>
+<tr><td align="LEFT"><tt>datetime</tt></td>
+<td align="LEFT">fecha y hora 'aaaa-mm-dd hh:mm:ss'</td>
+</tr>
+<tr><td align="LEFT"><tt>filename</tt></td>
+<td align="LEFT">nombre de archivo usado en tablas del sistema</td>
+</tr>
+<tr><td align="LEFT"><tt>float4</tt></td>
+<td align="LEFT">número real de precisión simple de 4 bytes</td>
+</tr>
+<tr><td align="LEFT"><tt>float8</tt></td>
+<td align="LEFT">número real de precisión doble de 8 bytes</td>
+</tr>
+<tr><td align="LEFT"><tt>inet</tt></td>
+<td align="LEFT">dirección de red</td>
+</tr>
+<tr><td align="LEFT"><tt>int2</tt></td>
+<td align="LEFT">número entero de dos bytes, de -32k a 32k</td>
+</tr>
+<tr><td align="LEFT"><tt>int28</tt></td>
+<td align="LEFT">8 numeros enteros de 2 bytes, usado internamente</td>
+</tr>
+<tr><td align="LEFT"><tt>int4</tt></td>
+<td align="LEFT">número entero de 4 bytes, -2B to 2B</td>
+</tr>
+<tr><td align="LEFT"><tt>int8</tt></td>
+<td align="LEFT">número entero de 8 bytes, 90#9018 dígitos</td>
+</tr>
+<tr><td align="LEFT"><tt>line</tt></td>
+<td align="LEFT">línea geométrica '(pt1, pt2)'</td>
+</tr>
+<tr><td align="LEFT"><tt>lseg</tt></td>
+<td align="LEFT">segmento de línea geométrica '(pt1, pt2)'</td>
+</tr>
+<tr><td align="LEFT"><tt>macaddr</tt></td>
+<td align="LEFT">dirección <small>MAC</small></td>
+</tr>
+<tr><td align="LEFT"><tt>money</tt></td>
+<td align="LEFT">unidad monetaria '$d,ddd.cc'</td>
+</tr>
+<tr><td align="LEFT"><tt>name</tt></td>
+<td align="LEFT">tipo de 31 carácteres para guardar identificadores del sistema</td>
+</tr>
+<tr><td align="LEFT"><tt>numeric</tt></td>
+<td align="LEFT">número de precisión múltiple</td>
+</tr>
+<tr><td align="LEFT"><tt>oid</tt></td>
+<td align="LEFT">tipo de identificación de objetos</td>
+</tr>
+<tr><td align="LEFT"><tt>oid8</tt></td>
+<td align="LEFT">arreglo de 8 <em>oid</em>s, utilizado en tablas del sistema</td>
+</tr>
+<tr><td align="LEFT"><tt>path</tt></td>
+<td align="LEFT">trayectoria geométrica '(pt1, ...)'</td>
+</tr>
+<tr><td align="LEFT"><tt>point</tt></td>
+<td align="LEFT">punto geométrico '(x, y)'</td>
+</tr>
+<tr><td align="LEFT"><tt>polygon</tt></td>
+<td align="LEFT">polígono geométrico '(pt1, ...)'</td>
+</tr>
+<tr><td align="LEFT"><tt>regproc</tt></td>
+<td align="LEFT">procedimiento registrado</td>
+</tr>
+<tr><td align="LEFT"><tt>reltime</tt></td>
+<td align="LEFT">intervalo de tiempo de rango limitado y relativo (Unix delta time)</td>
+</tr>
+<tr><td align="LEFT"><tt>smgr</tt></td>
+<td align="LEFT">manejador de almacenamiento (<em>storage manager</em>)</td>
+</tr>
+<tr><td align="LEFT"><tt>text</tt></td>
+<td align="LEFT">cadena de carácteres nativa de longitud variable</td>
+</tr>
+<tr><td align="LEFT"><tt>tid</tt></td>
+<td align="LEFT">tipo de identificador de tupla, localización física de tupla</td>
+</tr>
+<tr><td align="LEFT"><tt>time</tt></td>
+<td align="LEFT">hora ANSI SQL 'hh:mm:ss'</td>
+</tr>
+<tr><td align="LEFT"><tt>timespan</tt></td>
+<td align="LEFT">intervalo de tiempo '@ &lt;number&gt; &lt;units&gt;'</td>
+</tr>
+<tr><td align="LEFT"><tt>timestamp</tt></td>
+<td align="LEFT">fecha y hora en formato ISO de rango limitado</td>
+</tr>
+<tr><td align="LEFT"><tt>tinterval</tt></td>
+<td align="LEFT">intervalo de tiempo '(abstime, abstime)'</td>
+</tr>
+<tr><td align="LEFT"><tt>unknown</tt></td>
+<td align="LEFT">tipo desconocido</td>
+</tr>
+<tr><td align="LEFT"><tt>varchar</tt></td>
+<td align="LEFT">cadena de carácteres sin espacios al final, longitud especificada al momento de creación</td>
+</tr>
+<tr><td align="LEFT"><tt>xid</tt></td>
+<td align="LEFT">identificador de transacción</td>
+</tr>
+</tbody></table>
+
+</div></td></tr>
+</tbody></table>
+</div><p></p>
+<br>
+
+<p>
+</p><hr>
+<!--Navigation Panel-->
+<a name="tex2html2563" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node135.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="file://usr/share/latex2html/icons/next.png"></a> 
+<a name="tex2html2557" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node83.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="file://usr/share/latex2html/icons/up.png"></a> 
+<a name="tex2html2553" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node133.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="file://usr/share/latex2html/icons/prev.png"></a> 
+<a name="tex2html2559" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node1.html">
+<img width="65" height="24" align="BOTTOM" border="0" alt="contents" src="file://usr/share/latex2html/icons/contents.png"></a> 
+<a name="tex2html2561" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node218.html">
+<img width="43" height="24" align="BOTTOM" border="0" alt="index" src="file://usr/share/latex2html/icons/index.png"></a> 
+<br>
+<b> Next:</b> <a name="tex2html2564" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node135.html">INSERT</a>
+<b> Up:</b> <a name="tex2html2558" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node83.html">Crear</a>
+<b> Previous:</b> <a name="tex2html2554" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node133.html">VACUUM</a>
+ &nbsp; <b>  <a name="tex2html2560" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node1.html">Índice General</a></b> 
+ &nbsp; <b>  <a name="tex2html2562" href="https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOTAS-CURSO-BBDD/notas-curso-BD/node218.html">Índice de Materias</a></b> 
+<!--End of Navigation Panel-->
+<address>
+Ismael Olea
+2001-04-21
+</address>
+
+
+</body></html>

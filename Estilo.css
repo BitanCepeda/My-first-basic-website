@@ -1,0 +1,63 @@
+a:link{color: green;}
+
+a:visited{color: green;}
+
+a:hover {color: brown;}
+
+img{
+height: 35em;
+width: 100%;
+}
+ 
+hr { 
+    
+    background-color:green;
+    width=90em;
+    height: 1em; 
+}
+
+h1{
+  text-align:center;
+ font-size=20em;
+ font-family="Comic Sans Ms";
+
+}
+
+h2{
+	text-align: left;
+}
+
+body{
+background:white;
+}
+
+p {
+font-family:"Comic sans Ms";
+color:black;
+font-size:1.2em
+}
+
+
+#tit{
+color:green;
+font-size:5em;
+text-align: center;
+}
+
+#listas{
+text-align:left
+}
+
+#probl{
+list-style: none;
+}
+
+#soluciones{
+list-style: circle;
+}
+
+#sub{
+list-style: square;
+}
+
+

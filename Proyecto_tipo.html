@@ -1,0 +1,40 @@
+<html>
+
+<head>
+	<title>Insertar datos del tipo de proyecto</title>
+	<meta charset="UTF-8">
+	<link href="Estilo.css" rel=StyleSheet type=text/css >
+	<link href="Estilo2.css" rel=StyleSheet type=text/css >
+	</head>
+ 
+
+<body>
+  <img src="cacao1.jpg";></img>
+
+<hr/>
+  <p id="tit">Llenando bases de datos</p>
+<hr/>
+
+<!--Comenzamos la entrada de datos del proyecto y su tipo-->
+   <h2>Tipo de proyecto</h2>
+     <form action="Proyecto_tipo.php" method=POST>
+    
+	 <p>Escriba el id del proyecto por favor: <input name="ident" type=number required placeholder="El id proyecto aqui"/ >
+    </p>
+	 
+   <p>Cual es el tipo del proyecto?
+    <select name="tpo" size="1" required >
+      <option value="Agricola">Agricola</option>
+	  <option value="Industrial">Industrial</option>
+	  <option value="Publicitario">Publicitario</option>
+	</select>
+     </p>
+   <p>Escriba el nombre del proyecto por favor: <input name="nomb" type=text required placeholder="El nombre del proyecto aqui"/ >
+    </p>
+<input type="submit" value="GUARDAR"/>
+	<hr/>
+	
+		</form>
+  
+  </body>
+  </html>
